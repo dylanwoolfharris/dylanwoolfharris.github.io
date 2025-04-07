@@ -1,0 +1,693 @@
+[
+	{
+		"id": "event001",
+		"date": "11-08-2024",
+		"category": "HIGHLIGHTS",
+		"event_name": "Hike from Santa Cruz",
+		"location": [14.730555828494019, -91.2315055333014],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1390.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I take in the lake. I’m hiking on a path along the hillside, through blooming vegetation. The trail connects Santa Cruz and Tzununa, two little towns that dot the shore of Lake Atitlán. I’m walking with my friend and her 9-year-old foster child who gets tired and asks to be carried. It’s hot, but the air is clear and fresh and invigorating. The lake from this vantage is big and as blue as the November flora is green. Dormant volcanoes loom across the water."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Lago de Atitlán is the remnant of a prehistoric supervolcano that erupted and collapsed, leaving behind a basin of water. Before the Spanish invaded this continent, indigenous people settled along the shores. Now it is home to various communities, accessible by water taxis. Each town has a slightly different vibe. "
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"When we reach Tzuzuna, we hail a tuk-tuk and direct it up a steep hill to a restaurant for lunch. I order a sandwich and a beer. I’m hungry from the hike, and I eat quickly. Expats at a table next to us talk about property they own up the way. After lunch, my friend and her boy catch a boat at the dock back to Panajechel and I wait alone for another to take me in the opposite direction to San Juan, where I’ll spend the afternoon exploring the colorful streets and shops, and taking pictures of stray dogs."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1373.JPG"
+			}	
+			
+		]
+	},
+	{
+		"id": "event002",
+		"date": "11-07-2024",
+		"category": "THINGS I LEARNED",
+		"event_name": "Pacaya",
+		"location": [14.382303635926151, -90.60150827996692],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1146.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I learn about wild eruptions. I’m an hour into a hike to the base of Pacaya, one of several active volcanoes near the city of Antigua. Nothing grows on Pacaya’s coned slopes, which are formed by ashen lava rock that has been pulverized to dust and gravel. The mountain is imposing, and I look toward the summit. Wispy clouds hanging around the peak camouflage steam emitting from within."
+					]
+			},
+			{
+				"type": "text",
+				"text": [
+					"A guide tells me and a group of hikers that the last time he witnessed Pacaya erupt, a man had just made the trek with his girlfriend and was in the process of proposing when lava began flowing in the background a safe distance away. Another eruption in 2010, he tells us, was less cinematic and much more powerful. Lava and ash had spewed skyward, and a reporter covering the catastrophe was struck and killed by a rock the size of a car that had tumbled down from the explosion."
+					]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The clouds have now parted, and I see steam puff into the atmosphere above."
+				]
+			}
+				   
+		]
+
+	},
+	{
+		"id": "event003",
+		"date": "11-11-2024",
+		"category": "HIGHLIGHTS",
+		"event_name": "Maximon",
+		"location": [14.640305715640174, -91.23116221054512],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1448 copy.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I meet the sinner saint. It’s a crisp weekday morning. I’m in the small town of Santiago, a 30 minute boat ride from Panajachel, and I’m being led down a narrow alleyway closed in between cinder block walls. The path winds right and then left, around a few corners and if I were to look back, I would no longer see the main road. We are on our way to see Maximón, the so-called sinner saint. A few strides later, we step through a gate into a small courtyard and then into the doorway of an unassuming structure, a home perhaps. Several people lounge on chairs. The man who led me here starts speaking to them, but in my limited Spanish, I don’t understand. I smell strong incense. Moments pass before I am told that Maximón is sleeping in the ceiling and that he won’t be down for another 20 minutes."
+					]	
+			},		
+			{
+				"type": "text",
+				"text": [
+					"The man who I’d paid to help me find Maximón says he can’t stick around. He’s got other things to do, but if I want, I can return a little later by myself. I decide in the meantime to look for breakfast, but instead end up wandering around the central plaza, where people have set up stalls and tables to sell fruits, vegetables and other foods. I step into a large stone church. A woman is walking on her knees forward and then backward, in penance or devotion, a rite that I have never seen before and know nothing about."
+					]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Along a wall inside a glass case the size of a coffin, a ceramic representation of Jesus lies in a state of agony."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Worship in Santiago, and the other towns around Lake Atitlán, manifests in a blend of Colonial Spanish Catholicism and Mayan animism. Maximón embodies this mix of cultures. Who is Maximón and what are his origins? It’s not clear to me. One version I’d read online says that in pre-Colonial times, Maximón was a guy entrusted to watch over the families of a Mayan village while the husbands went out to fish on the lake. But instead Maximón tricked the wives into having sex with him. Despite his alleged transgressions, Maximón has become in the intervening centuries revered to a degree often associated with sainthood–while maintaining his sinner aura. Today, one can make an offering to a wooden effigy of Maximón if, say, one is going through a relationship problem. "
+					]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Each year a new family in Santiago is entrusted with housing the effigy, collecting the offerings, providing a place for those who seek him, and evidently, storing the figure in the ceiling each night. Maximón, the myth goes, loves cigarettes and booze, so the caretakers may smoke and drink nearby while they await visitors."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"When I return alone through the alleyway and step into the structure for the second time this morning, I see a wooden man, about 4 feet tall, upright in the shrine room. This is Maximón. He wears a cowboy hat and coat and around his neck are dozens of ties. He’s placed behind flowers and burning candles, and a small metal dish where visitors from previous days have piled coins and beads. Incense burns and the smell hits me again. Around the perimeter of the room, empty alcohol bottles stand scattered like stalagmites in a cave. I wait back near the entrance because a woman wearing a colorful dress is praying to Maximón in a faint whisper. I can’t tell if she’s speaking Spanish or Mayan. I give her space and hang back and watch and consider what I should say when I give my offering. "
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1450.JPG"
+			}
+		]
+	},
+	{	
+		"id": "event004",
+		"date": "11-05-2024",
+		"category": "CITIES & TOWNS",
+		"event_name": "Guatemala City",
+		"location": [14.642381803231636, -90.51477636921716],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/newnewguatbanner.jpg"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I arrive in Guatemala City. The town wakes. Shopkeepers push up metal doors along their rollers. Kids in school uniforms walk to bus stops. A man with a hose sprays shit from the sidewalk. And as the temperature starts to rise above a comfortable cool, I walk through a flock of pigeons, who are bobbing to the rhythm of their urban surrounding. I’m in the central district where I’ll spend a few hours before catching a bus to Antigua."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Guatemala City, the capital of Guatemala, is for travelers typically as short a stop as necessary before moving on to more interesting places in the country. But, as I understand it, that reputation is starting to change. People are finding reasons to stay a little longer and explore. There are zones in Guatemala City that one would surely be smart to avoid. But today, even with my full backpack, I feel safe in this part of town. It grows more vibrant as the morning opens up."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I’ll return and spend a night in Zone 4 at the end of my trip."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/guat.PNG"
+			},
+			{
+				"type": "popup-image",
+				"label": "City Index",
+				"src": "images/cityindex.png"
+			}	
+		]
+	},
+	{
+		"id": "event005",
+		"date": "11-05-2024",
+		"category": "FOOD & DRINKS",
+		"event_name": "First Breakfast",
+		"location": [14.63862395678439, -90.51136460038289],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_0975.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I eat my first Guatemalan breakfast. It’s eggs and tomatoes, refried beans, fresh tortillas, fried plantains and a cup of black coffee."
+				]
+			},
+			{
+  				"type": "footnote",
+  				"note": "I eat in a simple cafe near the downtown district, an hour or so after my red-eye lands."
+			}
+		]
+	},
+	{
+		"id": "event006",
+		"date": "11-08-2024",
+		"category": "CITIES & TOWNS",
+		"event_name": "Panajachel",
+		"location": [14.732838468339235, -91.15352835383158],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1253.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I admire Panajachel’s shore. I’m sitting on a beach, talking with a friend as evening approaches. Clouds are blocking the spectacular sunset I was expecting, but it’s pleasant nonetheless. I don’t know the name of this beach, or if it has one. We sit on sand a quarter of a mile south of the Panajachel dock."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "I’m roughly estimating the distance based on nothing more than intuition, and I acknowledge here the possibility that I could be way off."
+			},
+			{
+				"type": "text",
+				"text": [
+					"Panajachel, or Pana as it’s called, is the main city on Lake Atitlán. It’s the first lakeside town one encounters on the road from Guatemala City. Continue down the main thoroughfare, and one will pass through a mixed-use neighborhood, then a touristy strip with colorful shops and restaurants, before terminating at the boat dock. I’m staying in a sleepy residential area, a 15-minute walk away. We look out to the water until it’s too dark to see the hills on the other side. "
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Not another soul is nearby."
+				]
+			}
+		]
+
+	},
+	{
+		"id": "event007",
+		"date": "11-06-2024",
+		"category": "ODD THINGS",
+		"event_name": "Cerro de la Cruz",
+		"location": [14.564514969661847, -90.73106970518056],
+		"content_blocks": [
+			{
+				
+				"type": "image2",
+				"srcs": ["images/IMG_1033.JPG", "images/IMG_1036.JPG"]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I’m puzzled by a couple of signs. I encounter the signposts on a walk to Cerro de la Cruz, a lookout point north of Antigua. I can’t decipher what messages they’re supposed to be conveying."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"One depicts four people clumped in the center with arrows pointing inward at the group. The other sign shows a person holding a boxy object with a line crossed through it."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Before arriving in Guatemala, I had read a warning not to venture into the hills alone at night, and I wonder if the first sign is encouraging visitors to stick together in groups, but I’m not very confident this is right. I haven’t a guess what the second is saying."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Here at Cerro de La Cruz, I am alone, but it’s not night. I set off up the trail early, before breakfast or coffee to beat the mid-morning heat."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Cerro de la Cruz translates to Hill of the Cross. A large statue crucifix sits at a precipice overlooking Antigua. To the right, three dogs sleep on pavement below a lamppost. As the sun has yet to fully rise, it’s still pleasant for the four of us."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Later, I’ll show pictures of the signs to a bartender and ask her if she knows what they mean. She’ll tell me she isn’t sure, but she’ll mention that Antigua elected a new mayor who has imposed rules that the bartender doesn’t care for. She’ll suggest these signs could be related to a citywide initiative, and even though this seems unlikely to me, I nod and say, “Yeah, maybe you’re right.”"
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1037.JPG"
+			}
+			
+		]
+	},
+	{
+		"id": "event008",
+		"date": "11-09-2024",
+		"category": "THE PEOPLE",
+		"event_name": "Soccor on the bball court",
+		"location": [14.693841616827346, -91.28259625128345],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1366.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I stop to watch locals on an outdoor basketball court take turns kicking penalty shots with a soccer ball."
+				]
+			}
+		]
+	}, 
+	{
+		"id": "event009",
+		"date": "11-11-2024",
+		"category": "FOOD & DRINKS",
+		"event_name": "Last supper",
+		"location": [14.621364655023017, -90.51328321381601],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1456.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I eat my last meal in Guatemala. I’m sitting upstairs near a condiment bar in a taco joint. The food is really good and pretty cheap. I don’t want to leave, but tomorrow I’ll uber to the airport early in the morning, board a flight, and return to the United States. "
+				]
+			}
+
+		]
+	}, 
+	{
+		"id": "event010",
+		"date": "11-08-2024",
+		"category": "MY PEOPLE",
+		"event_name": "Valentina",
+		"location": [14.746237853953149, -91.15135928051805],
+		"content_blocks": [	
+			{
+				"type": "image",
+				"src": "images/val.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I talk about Valentina. I met Valentina in Nairobi in 2022. She was in Kenya for a work conference, and while there had extended her stay to see some of the sites. As it happened, she and I were in the same small safari group, and over the next few days, we sat by each other on a bumpy van ride, spotting animals on the Maasai Mara savannah, and chit-chatting along the way. We quickly became friends."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Valentina is admirable, one who fights the good fight. She concerns herself with social causes, defending the defenseless, and sticking up for marginalized groups. She’s also naturally curious. During one leg of our journey, she asked the Kenyan van driver questions about prostitution in his country–as well as LGBTQ rights, and other such issues–in a way that was so honest yet direct that he asked her if she was a journalist."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"When it was time to part ways, I was sad to say goodbye. She and I kept in touch nominally online. Every now and then, she encouraged me to travel to Lake Atitlán, Guatemala where she was born and raised. And eventually, I do. Valentina resides in Panajachel, the main town near the lake and a convenient home base from which to explore the rest of the region."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"At the moment, I’m sitting close to a large window in the dining room of a rented home, where Valentina lives with her younger sister and foster child. It’s dark outside and the glass is opaque and reflects back the light overhead. A wine bottle and flower vase sit on the table. Valentina is allowing me to stay upstairs in her sister’s room, while her sister is away with her dad for the weekend. We will spend this evening at the table talking about our lives until the wine is empty."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "This probably should say “until the bottle is empty” or “until the wine is gone” but I like the way “wine is empty” sounds so I kept it."
+			},
+			{
+				"type": "text",
+				"text": [
+					"I am thankful for her generosity, for her hospitality, for her."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1264.JPG"
+			}
+		]		
+	}, 
+	{
+		"id": "event011",
+		"date": "11-08-2024",
+		"category": "THINGS I LEARNED",
+		"event_name": "The Little Prince",
+		"location": [14.691157971128352, -91.11753126045838],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1239.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I reflect on the Little Prince. It’s midday and I’m sitting at an outdoor restaurant, just off a shoreline road in a town called San Antonio. My friend, whom I’m visiting, says that the food is good but the service is slow. While we wait, I take a walk up a hilly street, getting a better view of the water. Across the lake, a peninsula juts to the north. This formation, I’m told when I return to the table, is the inspiration for an image in Antoine de Saint-Exupery’s 1943 illustrated book, The Little Prince. In the book, a character draws a picture of a lumpy, funny-shaped object that he says is a snake that has eaten an elephant. Everyone else in the story believes the drawing depicts a hat."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The author had been in Guatemala for several months in 1938. And while here, it’s alleged, copied down the landscape he saw before him in Lake Atitlán. He sat, perhaps, in nearly the same spot almost a century ago that I’m sitting in now."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I trust that this story is true because the peninsula looks just like the snake illustration."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Les plus belles choses du monde ne peuvent être vues ou touchées, elles se ressentent avec le cœur."
+				]
+			}
+
+		]
+	}, 
+	{
+		"id": "event012",
+		"date": "11-10-2024",
+		"category": "MY PEOPLE",
+		"event_name": "A",
+		"location": [14.746237853953149, -91.15135928051805],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/A.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I return to childhood. I smell food cooking in the kitchen, one room over. While I wait for dinner, I play with A, a 9-year-old boy and my friend Valentina’s foster child. I have been staying at Valentina’s house in Panajachel, Guatemala, for a few nights."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "Out of respect for his privacy, I am only using A’s first initial and covering his face in any photos."
+			},
+			{
+				"type": "text",
+				"text": [
+					"A is nonverbal, but by using gestures, noises and demonstrations, he’s able to communicate how to play his game. It’s simple. It goes like this: One of us takes Thomas the Tank Engine and pretends that he is sailing through the air after hitting a ramp at high speeds. Then a shark jumps out of nowhere and bites or attempts to bite the train. We do this over and over, each iteration with slight variations for Thomas’ and the shark’s fate. Sometimes A controls the train, and sometimes the shark. We switch back and forth. It’s now my turn to maneuver the shark. I make it overshoot the train and crash improbably into a wall, then slowly slide down its surface like a cartoon. A laughs aloud. I think he would have me play this game for hours if I were willing."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"It reminds me of the games I used to play with my nephews when they were toddlers. In another life, I am a children’s entertainer."
+				]
+			}
+
+		]	
+	},
+	{
+		"id": "event013",
+		"date": "11-06-2024",
+		"category": "FOOD & DRINKS",
+		"event_name": "Gallo",
+		"location": [14.559524440033085, -90.73331018342374],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_0998.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I sip a beer. I’m sitting by myself at a lunch spot in Antigua. It’s hot outside and I haven’t slept much in the last two nights. Back in my country, a presidential election was called late last night. I order a Gallo. This is a local lager, a common beer, the type of beer you can find in almost any country, the type that men and women across the globe drink on their door stoops laughing with friends at the end of a long day of work. I take a swig and it’s delicious, exactly what I need right now."
+				]
+			}
+			
+		]
+	},
+	{
+		"id": "event014",
+		"date": "11-11-2024",
+		"category": "THINGS I LEARNED",
+		"event_name": "Buried Heart",
+		"location": [14.638347942192604, -91.22914334195201],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1446.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I am drawn to a buried human heart. The heart belonged to an Oklahoma priest, who was executed in 1981 in the living quarters of a Guatemalan church. I am near the pews reading a plaque about this man and his heart. A churchgoer lighting a candle on the opposite side tries to get my attention, to sign me up for a tour, but I tell him no thanks and continue reading. "
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The church is in the small lakeside village of Santiago, which was a hotbed of bloody clashes between the military and guerilla fighters during a decades-long civil war. The early ‘80s were a particularly violent period known as the Silent Holocaust, replete with all the horrors one can expect in tragic conflict, including murder of civilians and children, rape, disappearances, barberic beatings, arson, looting and torture."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Father Stanley Rother worked in the Lake Atitlán region, where he was targeted for sheltering and supporting poor and indigenous communities. After he was killed, his body was returned to Oklahoma, except for his heart, which was removed with permission from his relatives and interred in the building I am now standing in."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Nine years after he was shot dead, in December 1990, another uprising near an army post ended when a crowd of civilians was gunned down, killing 13 or 14. Outcry over the murders eventually led to the expulsion of a military presence in Santiago. I visited a peace park earlier in the morning where headstones commemorate those victims. As I look at the floor beneath a stone altar, I think to myself that 1990 wasn’t so long ago."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "I have thoughts to come about visiting places with violent pasts."
+			}
+			
+		]
+	},
+	{
+		"id": "event015",
+		"date": "11-05-2024",
+		"category": "THE PEOPLE",
+		"event_name": "Women in market",
+		"location": [14.641105921188846, -90.51120601960744],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/newmarketwoman.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day a woman sets up her shop at the underground Central Market in Guatemala City."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "By underground, I mean that the market is below street level, not underground as in a cool, secret thing that only hip people know about."
+			}
+			
+		]
+	},
+	{
+		"id": "event016",
+		"date": "11-08-2024",
+		"category": "PLANTS & ANIMALS",
+		"event_name": "Cat",
+		"location": [14.746237853953149, -91.15135928051805],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/cat.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I watch a cat walk. The cat tiptoes along a wall in my friend Valentina’s backyard. It might be her cat. She told me she had a cat or two, but a neighbor tried to claim one of them."
+				]
+			}
+		]
+	},
+	{
+		"id": "event017",
+		"date": "11-07-2024",
+		"category": "ODD THINGS",
+		"event_name": "Jade statue",
+		"location": [14.556568923970106, -90.7293140894191],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1107.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I pass by a jade mannequin. I’m walking down a side road in Antigua lined with little shops and restaurants. Standing in the doorway of a store called Jade Maya, is a figure with a green face and green antenne-like sticks coming out of its head, to advertise the color of the jewels, I suppose. Jade is mined in Guatemala, and it was important to Mayan culture in the past. There are several places in town that sell it. Despite the kitschy statue, I bet the jewelry inside is nice and really expensive."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Antigua is a popular tourist town and prices reflect it."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I have just left a fancy hotel property, hidden behind a wall with a security guard stationed at the front gate. I had read online that I could find a museum at the address. When I got to the door, I didn’t see a sign for a museum but I wanted to take a look anyway, so I slipped in when the door was open for other guests and no one stopped to question me. Once inside, I wandered through the courtyard and common spaces. There were some artifacts behind glass on shelves in a hallway, and although interesting, the display isn't what I would call a museum."
+				]
+			}
+		]
+	},
+	{
+		"id": "event017",
+		"date": "11-06-2024",
+		"category": "MINI DOCS",
+		"event_name": "Test doc",
+		"location": [14.556568923970106, -90.7293140894191],
+		"content_blocks": [
+			{
+				"type": "video",
+				"youtube_id": "upZcLDzzlwA"
+
+			}
+			
+		]	
+	},
+	{
+		"id": "event018",
+		"date": "11-11-2024",
+		"category": "PLANTS & ANIMALS",
+		"event_name": "Dogs",
+		"location": [14.740297308137139, -91.1564719678233],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1383.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day sleeping dogs line the sidewalk. Dogs are everywhere. And while Guatemala is not unique in this regard, the packs of street dogs that occasionally roam around looking for food, but more often rest in the sun, seem more evident in this country than others I’ve been to. To a dog, the mutts are friendly and cute and amusing in their freedom, but it’s also sad and unfortunate that so many are without homes."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I’m nearly speed-walking back from the Panajachel dock because I need to gather my things and get ready to catch a bus back to Guatemala City. Along the route, I see seven dogs sleeping in a line, and I slow down to appreciate the canine fresco."
+				]
+			}
+			
+		]
+	},
+	{
+		"id": "event019",
+		"date": "11-06-2024",
+		"category": "HIGHLIGHTS",
+		"event_name": "Nuns",
+		"location": [14.55956862855957, -90.73096571423824],
+		"content_blocks": [
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1076.JPG", "images/IMG_1070.JPG"]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I imagine being an 18th Century nun. I’m standing in a claustrophobic room in the ruins of a convent, built here in Antigua almost 300 years ago. I brush against a cold wall. Each room has its own bathroom, which is essentially a closet with a hole that connects to a tunnel for sewage. The stench, I imagine, was omnipresent."]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The women who resided here lived monastic lives, ones filled with scriptural study and not much else. Through the window, I see the green grounds outside. This feels like a prison. But the nuns must have found fulfillment dedicating their lives to God, and while it’s not a life I fully understand, I appreciate that they knew something about meaning and purpose that I don’t."]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The building is a maze of stone chambers and pathways, which I wander through slowly and deliberately, careful not to miss any nook."]
+			},
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1086.JPG", "images/IMG_1082.JPG"]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1078.JPG"
+			}
+		]
+	},
+	{
+		"id": "event020",
+		"date": "11-05-2024",
+		"category": "ODD THINGS",
+		"event_name": "Presidential Palace",
+		"location": [14.642758084118784, -90.51357103993888],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_0982.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I’m near the president. I’m killing time after breakfast in Guatemala City the morning I arrive. Near the city center, across Constitution Plaza park, in a large government building is the National Palace of Culture, which offers tours in English. I sign up for the 9:30 a.m. time slot, but I’m the only one in the tour group."
+				]
+			}, 
+			{
+				"type": "text",
+				"text": [
+					"The guide is a friendly young woman who moves the tour at a quick pace. We pass through rooms with stained glass, murals, art and photographs, all imbued with a mix of overt Mayan and Spanish symbolism."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Up a flight of stairs, I am led to a large banquet hall draped with flags, where I’m told presidential proclamations are made. I ask whether the president of Guatemala comes to this building often, and she says yes, every day. His office is in the building, she says, and points down a hallway."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"It’s like touring a government building in Washington DC, only to discover midway through the tour that the office you are in is the White House."
+				]
+			} 
+		]
+	}	
+]
+

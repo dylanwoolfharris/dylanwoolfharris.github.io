@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Live GUATAMALA Site</title>
+  <style> 
+    html, body {
+      font-family: Arial, sans-serif;
+      width: 90%;
+      margin: 0 auto;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background-color: black;
+      color: white;
+      overflow: hidden;
+    }
+
+    #top-zone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px; /* Adjust height as needed */
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      z-index: 10;
+    }
+
+    #bottom-zone {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px; /* Adjust height as needed */
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 80px;
+      overflow: visible;
+      z-index: 5;
+    }
+
+    /* Main zone fits between top and bottom */
+    #main-zone {
+      position: absolute;
+      top: 60px; /* Match #top-zone height */
+      bottom: 70px; /* Match #bottom-zone height */
+      left: 0;
+      right: 0;
+      display: flex;
+      gap: 15px;
+      padding: 5px 100px;
+      box-sizing: border-box;
+      overflow: visible;
+      z-index: 15;
+    }
+
+    /* Left and Right zones */
+    #main-left, #main-right {
+      flex: 1;
+      overflow: hidden;
+      height: 100%;
+      box-sizing: content-box;
+    }
+
+    #main-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+    }
+
+    #main-right {
+      overflow-y: auto;
+      padding: 0px;
+      box-sizing: border-box;
+      background: black;
+      scrollbar-width: thin;
+      scrollbar-color: white black;
+    }
+
+    #main-right::-webkit-scrollbar {
+      width: 10px;
+    }
+    #main-right::-webkit-scrollbar-thumb {
+      background-color: #36454F;
+      border-radius: 5px;
+    }
+    #main-right::-webkit-scrollbar-track {
+      background-color: black;
+    }
+
+    #main-right img:not(.footnote-icon) {
+      max-width: 100%;
+      height: auto;
+    }
+    #main-right p {
+      margin: 7px 20px 1.2em 20px;
+    }
+
+    #category-dropdown {
+      padding: 5px;
+    }
+
+    #timeline-container{
+      max-width: 100%;
+      height: 80px;
+      background-color: black;
+      margin-top: 5px;
+      overflow: visible;
+    }
+
+    #timeline-line {
+      width: 95%;
+      height: 2px;
+      background-color: #912f0b;
+      position: absolute;
+      top: 65%;
+      left: 20px;
+      transform: none;
+      margin: 0 0;
+      width: calc(100% - 160px);
+      margin-left: 60px;
+    }
+
+    .timeline-label {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 12px;
+      color: white;
+      padding: 0px 5px;
+      top: 4px;
+    }
+    .timeline-tick {
+      position: absolute;
+      width: 2px;
+      height: 6px;
+      background-color: #912f0b;
+      top: 100%;
+      transform: translateX(-50%);
+    } 
+    .event-marker {
+      height: 25px;
+      width: auto;
+      position: absolute;
+      bottom: 2px;
+    }
+    .bowling-pin-img {
+      height: 25px;
+      width: auto;
+      position: absolute;
+      bottom: 2px;
+    }
+    a.event-marker.selected::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: -7px;
+      width: 4px;
+      height: 4px;
+      background-color: red;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 1px;
+    }
+    #main-right .footnote-icon {
+      width: 22px;
+      height: 8px;
+      cursor: pointer;
+    }
+    .footnote-popup-box {
+      position: absolute;
+      background: white;
+      color: black;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-width: 250px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      border-radius: 6px;
+      font-size: 0.85em;
+    }
+
+    .footnote-popup-close {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #main-right.content-loaded{
+      background-color: #fefefe;
+      color: #222;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .footnote-block {
+      display: flex;
+      align-items: flex-start;
+      margin: -12px 20px 8px;
+    }
+    .timeline-nav {
+      width: 30px;
+      height: 30px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      border: none;
+      border-radius: 50%;
+      background: none;
+      z-index: 20;
+    }
+
+    #timeline-nav-left {
+      position: absolute;
+      left: 25px;
+      bottom: 38px;
+    }
+
+    #timeline-nav-right {
+      position: absolute;
+      right: 25px;
+      bottom: 38px;
+    }
+    .pin-date-label {
+      position: absolute;
+      bottom: 100%; /* Above the pin */
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 10px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .event-marker:hover .pin-date-label {
+      opacity: 1;
+    }
+    #top-nav {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 100;
+      font-size: 14px;
+    }
+
+    #top-nav a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #popup-box {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      background: white;
+      color: black;
+      padding: 15px;
+      border: 1px solid #999;
+      border-radius: 8px;
+      max-width: 900px;
+      z-index: 200;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    #popup-box.hidden {
+      display: none;
+    }
+
+    #popup-close {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #main-right.main-right-video {
+      background-color: black;
+      color: white; /* Optional: for contrast with black */
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .popup-image-trigger {
+      color: #0077cc;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      margin: 10px 14px;
+    }
+
+    .popup-image-box {
+      position: absolute;
+      top: 20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid #ccc;
+      padding: 1em;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 1000px;
+    }
+
+    .popup-image-box img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .popup-image-close {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      cursor: pointer;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .nested-toggle {
+      color: #aaa;
+      font-size: 0.85em;
+      margin-top: 8px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .nested-footnote {
+      margin-top: 6px;
+      font-size: 0.85em;
+      color: #ddd;
+    }
+    #mode-toggle {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .mode-btn {
+      padding: 6px 12px;
+      margin-left: 6px;
+      background-color: white;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .mode-btn.active {
+      background-color: #eee;
+      font-weight: bold;
+    }
+    #dropdown-container {
+      position: absolute;
+      top: 10px;
+      left: 400px; /* or try 200px or whatever works visually */
+      z-index: 1000;
+    }
+    #timeline-line.timeline-mode {
+      position: absolute;
+      height: 19px;
+      background-color: #444;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 2px;
+      top: 45px; /* ← THIS is what’s positioning it */
+      left: 20px;
+      transform: none;
+      width: calc(100% - 160px);
+      margin-left: 60px;
+    }
+
+    #timeline-marker {
+      cursor: grab;
+    }
+    body.grabbing,
+    body.grabbing * {
+      user-select: none;
+      cursor: grabbing !important;
+    }
+    #drag-zone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 999; /* below the bowling ball */
+      pointer-events: none;
+    }
+    .timeline-mode-label {
+      top: 24px; /* or whatever spacing works best */
+    }
+    .category-mode-label {
+      top: 100%; /* Position directly below the timeline bar */
+      transform: translateX(-50%) translateY(6px); /* Optional: nudge down slightly */
+      font-size: 12px;
+      white-space: nowrap;
+      color: white;
+      position: absolute;
+    }
+    .mode-btn {
+      font-family: Arial, sans-serif; /* Or match your site’s font */
+      font-size: 14px;
+      padding: 6px 16px;
+      margin-left: 10px;
+      border: 1px solid #999;
+      border-radius: 20px; /* oval-ish */
+      background-color: black;
+      color: lightgray;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      color: white;
+      font-size: 16px;
+      border-color: white;
+      background-color: black;
+    }
+    .timeline-date-label {
+      position: absolute;
+      top: -22px; /* slightly above the bowling ball */
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: white;
+      font-size: 9px;
+      padding: 3px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+
+
+
+  </style>
+ <link rel="stylesheet" href="leaflet/leaflet.css" />
+</head>
+
+<body>
+  <script src="leaflet/leaflet.js"> </script>
+
+<div id="top-nav">
+  <a href="#" id="about-link">About</a>
+  <a href="#" id="contact-link">Contact</a>
+</div>
+
+
+<div id="popup-box" class="hidden">
+  <span id="popup-close">×</span>
+  <div id="popup-content"></div>
+</div>     
+
+<div id="top-zone">
+  <div id="dropdown-container">
+    <select id="category-dropdown">
+      <option value="">Pick a category</option>
+    </select>
+  </div>
+</div>
+
+<div id="mode-toggle">
+  <button id="timeline-mode-button" class="mode-btn">Timeline Mode</button>
+  <button id="category-mode-button" class="mode-btn active">Category Mode</button>
+</div>
+
+<div id="main-zone">
+  <div id="main-left">
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+  </div>
+
+  <div id="main-right">
+    <!-- Event details will appear here -->
+  </div>
+</div>
+
+
+<div id="bottom-zone">
+  <div id="timeline-nav-left" class="timeline-nav">&#9664;</div>
+  <div id="timeline-nav-right" class="timeline-nav">&#9654;</div>
+  <div id="timeline-container">    
+    <div id="timeline-line"></div>
+    <div id="drag-zone"></div>   
+  </div>
+</div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the map
+
+    var map = L.map('map', {
+        center: [14.64230, -90.90001], // Initial center point
+        zoom: 8,  // Initial zoom level
+        scrollWheelZoom: false, // Disable scroll zoom
+        doubleClickZoom: false, // Disable double-click zoom
+        dragging: false, // Disable dragging
+        zoomControl: false, // Hide zoom buttons
+        touchZoom: false, // Disable touch gestures
+        boxZoom: false, // Disable zooming by box selection
+        keyboard: false, // Disable keyboard interactions
+    });
+
+    var customIcon = L.icon({
+        iconUrl: 'images/dwhred.png',  // Update with your actual file path
+        iconSize: [12, 12],  // Adjust size as needed
+        iconAnchor: [5, 5],  // Center the icon on the coordinate
+    });
+
+    var eventMarkers = {};
+
+    let currentFilteredEvents = [];
+    let currentEventIndex = -1;
+    let currentMode = 'timeline';
+    let currentTimelineIndex = 0;
+    let timelineDataGlobal = []; // store for arrow use
+    let allTimelineDates = [];   // the full date range
+
+
+
+    function addEventMarkers(eventsData) {
+        eventsData.forEach(event => {
+            if (event.location && event.location.length === 2) { 
+                const marker = L.marker(event.location, { 
+                    icon: customIcon, 
+                    interactive: false // Prevents clicking
+                });
+
+                eventMarkers[event.id] = marker;
+            }
+        });
+    }
+
+    function showEventMarker(eventId) {
+        // Remove any existing marker
+        //console.log(`showEventMarker called with eventId: ${eventId}`);
+        Object.values(eventMarkers).forEach(marker => map.removeLayer(marker)); 
+
+        // Add only the marker that corresponds to the clicked event
+        /*if (eventMarkers[eventId]) {
+            eventMarkers[eventId].addTo(map);
+        }
+    }*/
+        if (eventMarkers[eventId]) {
+            //console.log(`Adding marker for eventId: ${eventId}`);
+            eventMarkers[eventId].addTo(map);
+        } else {
+            console.warn(`No marker found for eventId: ${eventId}`);
+        }
+     }   
+    fetch('./guatevents.json')
+        .then(response => response.json())
+        .then(eventsData => {
+            addEventMarkers(eventsData);  // Call function to place markers
+        })
+        .catch(error => console.error("Error loading events:", error));
+
+    // Add a tile layer (this is the base map layer)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://carto.com/">CARTO</a> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+
+    fetch('./guatevents.json')
+      .then(response => response.json())
+      .then(eventsData => {
+        const categoryDropdown = document.getElementById('category-dropdown');
+        const categories = [...new Set(eventsData.map(event => event.category))];
+        //console.log(categories);
+
+        categories.forEach(category => {
+          const option = document.createElement('option');
+          option.value = category;
+          option.textContent = category;
+          categoryDropdown.appendChild(option);
+        });
+
+        document.getElementById('category-dropdown').addEventListener('change', function() {
+          const selectedCategory = this.value; // Get the selected category
+          //console.log('Selected category:', selectedCategory);
+
+          const filteredEvents = eventsData
+            .filter(event => event.category === selectedCategory)
+            .sort((a,b) => new Date(a.date) - new Date(b.date));
+          //console.log('Filtered events:', filteredEvents);
+
+          addBowlingPins(filteredEvents, eventsData);
+        });
+
+        document.getElementById('timeline-nav-left').addEventListener('click', () => {
+          if (currentMode === 'timeline') {
+            if (currentTimelineIndex > 0) {
+              currentTimelineIndex--;
+              updateTimelineMarkerAndImage();
+            }
+          }
+        });
+
+        document.getElementById('timeline-nav-right').addEventListener('click', () => {
+          if (currentMode === 'timeline') {
+            if (currentTimelineIndex < timelineDataGlobal.length - 1) {
+              currentTimelineIndex++;
+              updateTimelineMarkerAndImage();
+            }
+          }
+        });
+
+        document.getElementById('timeline-line').addEventListener('click', (e) => {
+          if (currentMode !== 'timeline') return;
+
+          const timelineLine = document.getElementById('timeline-line');
+          const rect = timelineLine.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const clickPercent = clickX / rect.width;
+
+          const clickedIndex = Math.round(clickPercent * (allTimelineDates.length - 1));
+
+          if (clickedIndex > currentTimelineIndex && currentTimelineIndex < allTimelineDates.length - 1) {
+            currentTimelineIndex++;
+          } else if (clickedIndex < currentTimelineIndex && currentTimelineIndex > 0) {
+            currentTimelineIndex--;
+          }
+
+          updateTimelineMarkerAndImage(currentTimelineIndex);
+        });
+
+
+
+        const uniqueDates = getUniqueDates(eventsData);
+
+        const firstDate = new Date(Math.min(...uniqueDates.map(date => date.getTime())));
+        const lastDate = new Date(Math.max(...uniqueDates.map(date => date.getTime())));
+
+        //console.log('First Date:', firstDate.toLocaleDateString('en-US'));
+        //console.log('Last Date:', lastDate.toLocaleDateString('en-US'));
+
+        const allDates = [];
+        let currentDate = new Date(firstDate);
+
+        while (currentDate <= lastDate) {
+          allDates.push(new Date(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        renderTimeline(allDates, eventsData);
+      });
+
+
+
+    function getUniqueDates(eventsData) {
+      const uniqueDates = new Set();
+
+      // Store dates as Date objects
+      eventsData.forEach(event => {
+        const eventDate = new Date(event.date); // Convert the date string to a Date object
+        if (!isNaN(eventDate)) { // Ensure it's a valid Date
+          uniqueDates.add(eventDate);
+        } else {
+          console.error("Invalid date:", event.date);
+        }
+      });
+
+      // Return an array of Date objects
+      return Array.from(uniqueDates);
+    }
+
+    function addBowlingPins(filteredEvents, eventsData) {
+      const timelineLine = document.getElementById('timeline-line');
+
+      currentFilteredEvents = filteredEvents;
+      currentEventIndex = -1;
+
+
+      // Remove old pins
+      const oldPins = document.querySelectorAll('.event-marker');
+      oldPins.forEach(pin => pin.remove());
+
+      filteredEvents.forEach(event => {
+        const eventDate = new Date(event.date);
+
+        // Find the percentage position of the event on the timeline
+        const firstDate = new Date(Math.min(...eventsData.map(e => new Date(e.date).getTime())));
+        const lastDate = new Date(Math.max(...eventsData.map(e => new Date(e.date).getTime())));
+        const totalDays = (lastDate - firstDate) / (1000 * 60 * 60 * 24);
+        const eventDaysFromStart = (eventDate - firstDate) / (1000 * 60 * 60 * 24);
+        const positionPercent = (eventDaysFromStart / totalDays) * 100;
+
+        // Create bowling pin image
+        const pinLink = document.createElement('a');
+        pinLink.href = '#';
+        pinLink.classList.add('event-marker');
+        pinLink.style.left = `${positionPercent}%`;
+        pinLink.style.transform = 'translateX(-50%)';
+
+        // Set the event.id as a data attribute on the link
+        pinLink.setAttribute('data-event-id', event.id);
+
+        // Create bowling pin image inside the link
+        const pinImage = document.createElement('img');
+        pinImage.src = 'images/bowling-pin.png';
+        pinImage.classList.add('bowling-pin-img');
+        //pinImage.classList.add('event-marker');
+
+        const dateLabel = document.createElement('span');
+        dateLabel.classList.add('pin-date-label');
+        dateLabel.textContent = new Date(event.date).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric'
+        });
+
+        // Add image to link
+        pinLink.appendChild(pinImage);
+        pinLink.appendChild(dateLabel);
+
+        // Add link to timeline
+        timelineLine.appendChild(pinLink);
+
+        pinLink.addEventListener('click', function(e) {
+        e.preventDefault();
+
+  // This will always be the <a> element
+  const clickedPin = e.currentTarget;
+  const eventID = clickedPin.getAttribute('data-event-id');
+
+
+  if (!eventID) {
+    console.warn('No eventID found on clicked pin.');
+    return;
+  }
+
+  //console.log('Trying to find:', eventID);
+
+  const eventDetails = currentFilteredEvents.find(ev => ev.id === eventID);
+  if (!eventDetails) {
+    console.warn('Event not found for ID:', eventID);
+    return;
+  }
+
+  // Update current index
+  currentEventIndex = currentFilteredEvents.findIndex(ev => ev.id === eventID);
+
+  // Remove red dot from all pins
+  document.querySelectorAll('a.event-marker.selected').forEach(el => {
+    el.classList.remove('selected');
+  });
+
+  // Add red dot to this pin
+  clickedPin.classList.add('selected');
+
+  // Show content and map marker
+  displayEventContent(eventDetails);
+  showEventMarker(eventID);
+});
+
+      });
+    }
+
+
+    document.getElementById('timeline-nav-left').addEventListener('click', () => {
+      if (currentFilteredEvents.length === 0) return;
+
+      if (currentEventIndex === -1) {
+        currentEventIndex = 0; // nothing selected yet, default to first
+      } else if (currentEventIndex > 0) {
+        currentEventIndex--;
+      } else {
+        return; // already at beginning
+      }
+
+      updateEventSelection(currentFilteredEvents[currentEventIndex]);
+    });
+
+    document.getElementById('timeline-nav-right').addEventListener('click', () => {
+      if (currentFilteredEvents.length === 0) return;
+
+      if (currentEventIndex === -1) {
+        currentEventIndex = 0; // nothing selected yet, default to first
+      } else if (currentEventIndex < currentFilteredEvents.length - 1) {
+        currentEventIndex++;
+      } else {
+        return; // already at end
+      }
+
+      updateEventSelection(currentFilteredEvents[currentEventIndex]);
+    });
+
+
+    function displayEventContent(eventDetails) {
+      const mainRight = document.getElementById('main-right');
+
+      // Clear the current content
+      mainRight.innerHTML = '';
+      mainRight.scrollTop = 0;
+
+      const hasVideo = eventDetails.content_blocks.some(block => block.type === 'video');
+  
+      // Apply or remove the background class
+      if (hasVideo) {
+        mainRight.classList.add('main-right-video');
+      } else {
+        mainRight.classList.remove('main-right-video');
+      }
+
+      mainRight.classList.add('content-loaded');
+
+      // Loop through content blocks and display them
+      eventDetails.content_blocks.forEach(block => {
+        if (block.type === 'text') {
+          block.text.forEach(text => {
+            const textBlock = document.createElement('p');
+            textBlock.textContent = text;
+            mainRight.appendChild(textBlock);
+          });
+        } else if (block.type === 'image') {
+          const imageBlock = document.createElement('img');
+          imageBlock.src = block.src;
+          imageBlock.alt = 'Event Image';
+          imageBlock.loading = 'lazy';
+          mainRight.appendChild(imageBlock);
+        } else if (block.type === 'image2') {
+          // Create a container for side-by-side images
+          const imageContainer = document.createElement('div');
+          imageContainer.classList.add('image-container');
+          block.srcs.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Side by Side Image';
+            img.style.width = '50%'; // Each image takes half of the container
+            img.style.height = 'auto';
+            img.loading = 'lazy'
+            imageContainer.appendChild(img);
+          });
+          mainRight.appendChild(imageContainer);
+        } else if (block.type === 'video') {
+          const videoWrapper = document.createElement('div');
+          videoWrapper.classList.add('video-container');
+
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${block.youtube_id}?rel=0&modestbranding=1`;
+          iframe.frameBorder = '0';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          iframe.width = '560';
+          iframe.height = '315';
+
+          videoWrapper.appendChild(iframe);
+          mainRight.appendChild(videoWrapper);
+        } else if (block.type === 'popup-image') {
+          const popupBlock = document.createElement('div');
+          popupBlock.classList.add('popup-image-block');
+
+          const popupTrigger = document.createElement('span');
+          popupTrigger.classList.add('popup-image-trigger');
+          popupTrigger.textContent = block.label || 'View Image';
+
+          popupTrigger.addEventListener('click', () => {
+            // Remove any existing popup
+            const existingPopup = document.querySelector('.popup-image-box');
+            if (existingPopup) {
+              existingPopup.remove();
+            }
+
+            const popup = document.createElement('div');
+            popup.classList.add('popup-image-box');
+
+            popup.innerHTML = `
+              <span class="popup-image-close">✕</span>
+              <img src="${block.src}" alt="Popup Image" class="popup-image-content">
+            `;
+
+            popup.querySelector('.popup-image-close').addEventListener('click', () => {
+              popup.remove();
+            });
+
+            document.body.appendChild(popup);
+          });
+
+
+          popupBlock.appendChild(popupTrigger);
+          mainRight.appendChild(popupBlock);
+
+ 
+
+        } else if (block.type === 'footnote') {
+          
+          const footnoteBlock = document.createElement('div');
+          footnoteBlock.classList.add('footnote-block');
+
+          const footnoteIcon = document.createElement('img');
+          footnoteIcon.src = 'images/pencil3.jpg'; 
+          footnoteIcon.alt = 'Footnote';
+          footnoteIcon.classList.add('footnote-icon');
+
+          const footnoteText = document.createElement('span');
+          footnoteText.classList.add('footnote-text');
+          footnoteText.textContent = block.note;
+          footnoteText.style.display = 'none'
+
+          footnoteIcon.addEventListener('click', (e) => {
+            // Remove any existing popup
+            const existingPopup = document.querySelector('.footnote-popup-box');
+            if (existingPopup) {
+              existingPopup.remove();
+            }
+
+            // Create the popup box
+            const popup = document.createElement('div');
+            popup.classList.add('footnote-popup-box');
+            popup.innerHTML = `
+              <span class="footnote-popup-close">✕</span>
+              ${block.note}
+            `;
+
+            // Add nested footnote toggle (if present)
+            if (block.nested) {
+              const moreLink = document.createElement('div');
+              moreLink.classList.add('nested-toggle');
+              moreLink.textContent = 'More...';
+
+              const nestedNote = document.createElement('div');
+              nestedNote.classList.add('nested-footnote');
+              nestedNote.textContent = block.nested;
+              nestedNote.style.display = 'none';
+
+              moreLink.addEventListener('click', () => {
+                nestedNote.style.display = nestedNote.style.display === 'none' ? 'block' : 'none';
+                moreLink.textContent = nestedNote.style.display === 'block' ? 'Less' : 'More...';
+              });
+
+              popup.appendChild(moreLink);
+              popup.appendChild(nestedNote);
+            }
+
+
+            // Add close behavior
+            popup.querySelector('.footnote-popup-close').addEventListener('click', () => {
+              popup.remove();
+            });
+
+            // Position it near the icon (right and slightly above)
+            const rect = footnoteIcon.getBoundingClientRect();
+            popup.style.top = `${rect.top + window.scrollY - 10}px`;
+            popup.style.left = `${rect.right + window.scrollX + 10}px`;
+
+            document.body.appendChild(popup);
+          });
+
+
+          footnoteBlock.appendChild(footnoteIcon);
+          //footnoteBlock.appendChild(footnoteText);
+
+          mainRight.appendChild(footnoteBlock);
+        }
+      });
+    }  
+
+    function renderTimelineMode(eventData) {
+      const mainRight = document.getElementById('main-right');
+      mainRight.innerHTML = ''; // Clear previous content
+
+      const image = document.createElement('img');
+      image.src = eventData.image;
+      image.alt = 'Daily photo';
+      image.style.maxWidth = '100%';
+      image.style.height = 'auto';
+      image.style.display = 'block';
+      image.style.margin = '0 auto';
+
+      mainRight.appendChild(image);
+      showTimelineMarker(eventData.location);
+      //console.log('Rendering timeline with dates:', allTimelineDates.map(d => d.toDateString()));
+
+
+
+    }
+
+
+    function updateEventSelection(event) {
+      
+      if (!event) return;
+
+      // Show the event marker on the map
+      showEventMarker(event.id);
+
+      // Display the content
+      displayEventContent(event);
+
+      //console.log('All pins:', [...document.querySelectorAll('a.event-marker')].map(el => el.getAttribute('data-event-id')));
+
+      //console.log('Trying to find:', event.id);
+
+
+      //console.log('Trying to add selected to:', document.querySelector(`a.event-marker[data-eventID="${event.id}"]`));
+
+
+      // Move the red dot by adding "selected" class
+      document.querySelectorAll('a.event-marker.selected').forEach(el => {
+        el.classList.remove('selected');
+      });
+
+      const selectedPin = document.querySelector(`a.event-marker[data-event-id="${event.id}"]`);
+
+      if (selectedPin) {
+        selectedPin.classList.add('selected');
+      }
+    }
+
+
+    function renderTimeline(allDates, eventsData) {
+      const timelineLine = document.getElementById('timeline-line');
+      timelineLine.innerHTML = '';
+
+      const totalDays = (new Date(Math.max(...allDates.map(date => date.getTime()))) - new Date(Math.min(...allDates.map(date => date.getTime())))) / (1000 * 60 * 60 * 24);
+
+      allDates.forEach((day, index) => {
+      const positionPercent = (index / totalDays) * 100;
+
+      // Optional: tick marks here if you want to keep them
+
+      // Smart labeling logic
+      const isFirst = index === 0;
+      const isLast = index === allDates.length - 1;
+      const isStartOfMonth = day.getDate() === 1;
+
+      let labelText = '';
+      let showLabel = false;
+
+      if (allDates.length > 100 && isStartOfMonth) {
+        const tick = document.createElement('div');
+        tick.classList.add('timeline-tick');
+        tick.style.left = `${positionPercent}%`;
+        timelineLine.appendChild(tick);
+      }
+
+      if (allDates.length <= 20) {
+        labelText = day.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+        showLabel = true;
+
+      } else if (allDates.length <= 100) {
+        if (index % 5 === 0) {
+          labelText = day.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+          showLabel = true;
+        }
+
+      } else {
+        // For long timelines
+        if (isFirst) {
+          labelText = day.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+          showLabel = true;
+        } else if (isLast) {
+          labelText = day.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+          showLabel = true;
+        } else if (isStartOfMonth) {
+          labelText = day.toLocaleDateString(undefined, { month: 'short' });
+          showLabel = true;
+        }
+      }
+
+      if (showLabel) {
+        const label = document.createElement('div');
+        label.textContent = labelText;
+        label.classList.add('timeline-label', 'category-mode-label');
+        label.style.left = `${positionPercent}%`;
+        label.style.transform = 'translate(-50%, 8px)';
+        timelineLine.appendChild(label);
+      }
+    });
+
+
+
+}
+
+document.getElementById('about-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  showPopup("I don't know why I'm doing this. My best guess is that I've been experiencing a midlife crisis, of sorts.</p><p>Through my 20s and most of my 30s, I looked forward with an understanding that as soon as I did x, y, and z, then I could start living my life. But around the age of 40 my perspective changed. Of course, I am living my life, I have been this whole time and by now it's probably half over.</p><p>These days, my hair is getting grayer and I can no longer run on pavement without a dull ache in my knee. And (cliche alert!) that's when I start to question the purpose of any of this. I found myself at times feeling like necessary tasks were pointless('Why are you raking up those leaves on your lawn? You could just leave them there and let whatever happens happen.'), and pointless tasks were necessary ('Sometime this summer I need to summit Mt. Olympus and strip off all my clothes.'). I don't have any kids, and I'm sure that plays a factor somewhere in here.</p><p>[I just want to take a moment to point out that I probably have suffered from some depression, but on the whole, my life has been really good! I come from a great family, and by all measures, I'm incredibly lucky.]</p><p>So what am I working for? What am I doing week after week? And why? Well, like a lot of people, I love to travel, so I decided whatever else I do, I need to do more of that. Of course, there is only so much vacation time I dare ask for at once, so I said eff it. You only have a few more good decades left, and you should quit your jobs and spend 12 months in Southeast Asia [Once this travel itch has been scratched, I'm sure I'll feel satisfied and return home and get on with life. Right??].</p><p>You  can follow the journey in path mode or just see the highlights in category mode [you get to choose!] Here I am. Anyway, my name's Dylan and I'm just a human.</p>");
+});
+
+document.getElementById('contact-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  showPopup("Email me at: <br>dylanisahuman<br>@<br>gmail.com</p><p>I'll respond to comments here.");
+});
+
+document.getElementById('popup-close').addEventListener('click', () => {
+  document.getElementById('popup-box').classList.add('hidden');
+});
+
+function showPopup(content) {
+  document.getElementById('popup-content').innerHTML = content;
+  document.getElementById('popup-box').classList.remove('hidden');
+}
+
+document.getElementById('category-mode-button').addEventListener('click', () => {
+  currentMode = 'category';
+  switchToCategoryMode();
+});
+
+document.getElementById('timeline-mode-button').addEventListener('click', () => {
+  currentMode = 'timeline';
+  switchToTimelineMode();
+});
+
+switchToTimelineMode();
+
+const timelineBtn = document.getElementById('timeline-mode-button');
+const categoryBtn = document.getElementById('category-mode-button');
+
+timelineBtn.addEventListener('click', () => {
+  currentMode = 'timeline';
+  switchToTimelineMode();
+  timelineBtn.classList.add('active');
+  categoryBtn.classList.remove('active');
+});
+
+categoryBtn.addEventListener('click', () => {
+  currentMode = 'category';
+  switchToCategoryMode();
+  categoryBtn.classList.add('active');
+  timelineBtn.classList.remove('active');
+});
+
+timelineBtn.classList.add('active'); // default mode styling
+categoryBtn.classList.remove('active');
+
+
+function switchToCategoryMode() {
+  //console.log('Switching to CATEGORY mode');
+  document.getElementById('category-dropdown').style.display = 'block';
+  document.getElementById('timeline-line').innerHTML = ''; // clear timeline
+  document.getElementById('timeline-line').classList.remove('timeline-mode');
+  document.getElementById('main-right').innerHTML = '';    // clear content
+  document.getElementById('main-right').classList.remove('video-mode'); // reset any styling
+
+  document.getElementById('category-dropdown').value = '';
+  document.querySelectorAll('.event-marker').forEach(pin => pin.remove());
+  document.getElementById('main-right').innerHTML = '';
+  document.getElementById('main-right').className = ''; // reset to default (no background, no padding)
+  document.getElementById('main-right').style.overflowY = 'auto';
+
+  // 🧹 Clear timeline mode marker from the map
+  if (eventMarkers.timeline) {
+    map.removeLayer(eventMarkers.timeline);
+    delete eventMarkers.timeline;
+  }
+
+
+  // Re-fetch and render category-based timeline
+  fetch('./guatevents.json')
+    .then(response => response.json())
+    .then(eventsData => {
+      const filteredEvents = eventsData
+        .filter(event => event.category === document.getElementById('category-dropdown').value)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      const uniqueDates = getUniqueDates(eventsData);
+
+      const firstDate = new Date(Math.min(...uniqueDates.map(date => date.getTime())));
+      const lastDate = new Date(Math.max(...uniqueDates.map(date => date.getTime())));
+
+      const allDates = [];
+      let currentDate = new Date(firstDate);
+      while (currentDate <= lastDate) {
+        allDates.push(new Date(currentDate));
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+
+      
+
+      renderTimeline(allDates, eventsData);
+    
+        
+      addBowlingPins(filteredEvents, eventsData);
+    });
+}
+
+function switchToTimelineMode() {
+  //console.log('Switching to TIMELINE mode');
+  document.getElementById('category-dropdown').style.display = 'none';
+  document.getElementById('timeline-line').innerHTML = ''; // clear timeline
+  document.getElementById('timeline-line').classList.add('timeline-mode');
+  document.getElementById('main-right').innerHTML = '';
+  document.getElementById('main-right').classList.remove('video-mode');
+  document.getElementById('main-right').style.overflowY = 'hidden';
+
+
+  fetch('./guattimeline.json')
+    .then(response => response.json())
+    .then(timelineData => {
+      console.log('Timeline Data:', timelineData);
+      function parseDateMMDDYYYY(dateStr) {
+        const [month, day, year] = dateStr.split('-').map(Number);
+        return new Date(year, month - 1, day); // JS months are 0-based
+      }
+
+      const timelineDates = timelineData.map(item => parseDateMMDDYYYY(item.date)).sort((a, b) => a - b);
+      const firstDate = new Date(timelineDates[0].getFullYear(), timelineDates[0].getMonth(), timelineDates[0].getDate());
+      const lastDate = new Date(timelineDates[timelineDates.length - 1].getFullYear(), timelineDates[timelineDates.length - 1].getMonth(), timelineDates[timelineDates.length - 1].getDate());
+
+      
+
+
+      const allDates = [];
+      let currentDate = new Date(firstDate.getFullYear(), firstDate.getMonth(), firstDate.getDate()); // midnight local
+
+      const last = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
+
+      while (currentDate <= last) {
+        allDates.push(new Date(currentDate));
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+
+
+
+
+      // Render the timeline
+      renderTimeline(allDates, timelineData);
+
+      // Setup globals and initial image
+      timelineDataGlobal = timelineData;
+      allTimelineDates = allDates;
+      currentTimelineIndex = 0;
+      updateTimelineMarkerAndImage();
+
+      console.log("Ready to create bowling ball marker");
+
+      // Add bowling ball marker
+      // Create marker wrapper (container)
+let marker = document.createElement('div');
+marker.id = 'timeline-marker';
+marker.style.position = 'absolute';
+marker.style.top = '0px';
+marker.style.width = '20px';
+marker.style.height = '20px';
+marker.style.zIndex = '1000';
+marker.style.cursor = 'grab';
+marker.style.transform = 'translateX(-50%)';
+marker.style.display = 'flex';
+marker.style.justifyContent = 'center';
+
+// Calculate initial position
+const totalDays = (lastDate - firstDate) / (1000 * 60 * 60 * 24);
+const daysFromStart = (allTimelineDates[0] - firstDate) / (1000 * 60 * 60 * 24);
+const positionPercent = (daysFromStart / totalDays) * 100;
+marker.style.left = `${positionPercent}%`;
+
+// Create and add the bowling ball image inside the marker container
+const ballImg = document.createElement('img');
+ballImg.src = 'images/bowling-ball.png';
+ballImg.style.width = '20px';
+ballImg.style.height = '20px';
+marker.appendChild(ballImg);
+
+// Create and add the timeline date label
+const timelineDateLabel = document.createElement('div');
+timelineDateLabel.id = 'timeline-date-label';
+timelineDateLabel.classList.add('timeline-date-label');
+marker.appendChild(timelineDateLabel);
+
+// Append the full marker to the timeline line
+document.getElementById('timeline-line').appendChild(marker);
+
+// Update everything now that marker + label are ready
+updateTimelineMarkerAndImage();
+
+
+
+     
+
+
+
+let isDragging = false;
+const dragZone = document.getElementById('drag-zone');
+const timelineLine = document.getElementById('timeline-line');
+
+marker.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  document.body.classList.add('grabbing');
+  document.body.style.cursor = 'grabbing';
+  dragZone.style.pointerEvents = 'auto';
+});
+
+
+
+document.addEventListener('mouseup', (e) => {
+  console.log("🔴 MOUSEUP fired at", e.clientX);
+
+  if (!isDragging) return;
+  isDragging = false;
+  document.body.classList.remove('grabbing');
+  document.body.style.cursor = 'default';
+
+  dragZone.style.pointerEvents = 'none';
+
+  const rect = timelineLine.getBoundingClientRect();
+  const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+  const percent = x / rect.width;
+
+  const totalDays = (allTimelineDates[allTimelineDates.length - 1] - allTimelineDates[0]) / (1000 * 60 * 60 * 24);
+  const daysFromStart = Math.round(percent * totalDays);
+
+  const snappedDate = new Date(allTimelineDates[0]);
+  snappedDate.setDate(snappedDate.getDate() + daysFromStart);
+
+  const snappedIndex = timelineDataGlobal.findIndex(entry => {
+    const entryDate = new Date(entry.date);
+    return entryDate.toDateString() === snappedDate.toDateString();
+  });
+
+  if (snappedIndex !== -1) {
+    currentTimelineIndex = snappedIndex;
+    updateTimelineMarkerAndImage(currentTimelineIndex);
+  }
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  const rect = timelineLine.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const percent = Math.max(0, Math.min(x / rect.width, 1)) * 100;
+
+  marker.style.left = `${percent}%`;
+});
+
+
+
+
+
+
+
+
+
+
+          //console.log("Rendering timeline with", allDates.length, "dates");
+        });
+    }
+
+function updateTimelineMarkerAndImage() {
+  marker = document.getElementById('timeline-marker');
+  if (!marker) return;
+
+  const maxIndex = allTimelineDates.length - 1;
+  const positionPercent = (currentTimelineIndex / maxIndex) * 100;
+  const adjustedPercent = Math.min(positionPercent, 99.5); // Cap at 99.5%
+  marker.style.left = `${adjustedPercent}%`;
+  if (currentTimelineIndex === allTimelineDates.length - 1) {
+    marker.style.transform = 'translateX(-75%)'; // shift left fully
+  } else {
+    marker.style.transform = 'translateX(-50%)'; // normal
+  }
+
+
+  const currentEvent = timelineDataGlobal[currentTimelineIndex];
+  renderTimelineMode(currentEvent);
+  //console.log('Updating marker to index:', currentTimelineIndex, 'Event:', currentEvent);
+
+  const timelineDateLabel = document.getElementById('timeline-date-label');
+  const currentDate = new Date(allTimelineDates[currentTimelineIndex]);
+  timelineDateLabel.textContent = currentDate.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+  });
+  console.log("🟡 Setting date label to:", currentDate);
+
+}
+
+
+
+      function showTimelineMarker(location) {
+        Object.values(eventMarkers).forEach(marker => map.removeLayer(marker));
+
+        const marker = L.marker(location, { icon: customIcon, interactive: false });
+        marker.addTo(map);
+        eventMarkers.timeline = marker; // store it so we can remove it later
+      }
+
+
+
+
+
+
+
+  });
+</script>
+</body>
+</html>
