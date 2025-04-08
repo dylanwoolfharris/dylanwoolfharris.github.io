@@ -802,6 +802,11 @@
       }
 
       updateEventSelection(currentFilteredEvents[currentEventIndex]);
+      if (currentMode === 'category') {
+        const mainRight = document.getElementById('main-right');
+        mainRight.style.backgroundColor = '#fefefe';
+        mainRight.style.color = '#222';
+      }
     });
 
     document.getElementById('timeline-nav-right').addEventListener('click', () => {
@@ -816,6 +821,11 @@
       }
 
       updateEventSelection(currentFilteredEvents[currentEventIndex]);
+      if (currentMode === 'category') {
+        const mainRight = document.getElementById('main-right');
+        mainRight.style.backgroundColor = '#fefefe';
+        mainRight.style.color = '#222';
+      }
     });
 
 
