@@ -1166,6 +1166,8 @@ function switchToCategoryMode() {
   document.getElementById('main-right').innerHTML = '';
   document.getElementById('main-right').className = ''; // reset to default (no background, no padding)
   document.getElementById('main-right').style.overflowY = 'auto';
+  document.getElementById('main-right').style.backgroundColor = 'black';
+
 
   // 🧹 Clear timeline mode marker from the map
   if (eventMarkers.timeline) {
