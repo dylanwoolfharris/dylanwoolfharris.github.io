@@ -1169,8 +1169,10 @@ function switchToCategoryMode() {
   document.getElementById('main-right').innerHTML = '';
   document.getElementById('main-right').className = ''; // reset to default (no background, no padding)
   document.getElementById('main-right').style.overflowY = 'auto';
-  document.getElementById('main-right').style.backgroundColor = '#fefefe';
-  document.getElementById('main-right').style.color = '#222';
+  // Reset background to black while waiting for a pin to be clicked
+  document.getElementById('main-right').style.backgroundColor = 'black';
+  //document.getElementById('main-right').style.color = 'white';
+
 
   // 🧹 Clear timeline mode marker from the map
   if (eventMarkers.timeline) {
