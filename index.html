@@ -748,7 +748,10 @@
 
         pinLink.addEventListener('click', function(e) {
         e.preventDefault();
-
+        const mainRight = document.getElementById('main-right');
+        mainRight.style.backgroundColor = '#fefefe';
+        mainRight.style.color = '#222';
+          
   // This will always be the <a> element
   const clickedPin = e.currentTarget;
   const eventID = clickedPin.getAttribute('data-event-id');
