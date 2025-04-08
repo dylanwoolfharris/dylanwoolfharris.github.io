@@ -7,37 +7,37 @@
   },
   {
     "date": "11-06-2024",
-    "image": "/images/march06.jpg",
+    "image": "/images/march06.JPG",
     "temperature": 72,
     "location": [14.564514969661847, -90.73106970518056]
   },
   {
     "date": "11-07-2024",
-    "image": "/images/mar07.jpg",
+    "image": "/images/mar07.JPG",
     "temperature": 72,
     "location": [14.559524440033085, -90.73331018342374]
   },
   {
     "date": "11-08-2024",
-    "image": "/images/mar08.jpg",
+    "image": "/images/mar08.JPG",
     "temperature": 72,
     "location": [14.556568923970106, -90.7293140894191]
   },
   {
     "date": "11-09-2024",
-    "image": "/images/mar09.jpg",
+    "image": "/images/mar09.JPG",
     "temperature": 72,
     "location": [14.730555828494019, -91.2315055333014]
   },
   {
     "date": "11-10-2024",
-    "image": "/images/march10.jpg",
+    "image": "/images/march10.JPG",
     "temperature": 72,
     "location": [14.94318261771784, -91.1112016249541]
   },
   {
     "date": "11-11-2024",
-    "image": "/images/march11.jpg",
+    "image": "/images/march11.JPG",
     "temperature": 72,
     "location": [14.640305715640174, -91.23116221054512]
   }
