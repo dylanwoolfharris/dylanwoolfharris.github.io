@@ -1359,22 +1359,16 @@ document.addEventListener('mousemove', (e) => {
   marker.style.left = `${percent}%`;
 });
 
-
-
-
-
-
-
-
-
-
           //console.log("Rendering timeline with", allDates.length, "dates");
         });
     }
 
 function updateTimelineMarkerAndImage() {
   marker = document.getElementById('timeline-marker');
-  if (!marker) return;
+  if (!marker) {
+    console.warn('Marker not found when updating position.');
+    return;
+  }
 
   const maxIndex = allTimelineDates.length - 1;
   const positionPercent = (currentTimelineIndex / maxIndex) * 100;
