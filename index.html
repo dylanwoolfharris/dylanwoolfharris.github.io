@@ -1295,6 +1295,15 @@ const ballImg = document.createElement('img');
 ballImg.src = 'images/bowling-ball.png';
 ballImg.style.width = '20px';
 ballImg.style.height = '20px';
+ballImg.onload = () => {
+  console.log('Bowling ball icon loaded successfully');
+};
+ballImg.onerror = () => {
+  console.warn('Bowling ball icon failed to load. Retrying...');
+  setTimeout(() => {
+    ballImg.src = 'images/bowling-ball.png'; // Retry loading
+  }, 200);
+};
 marker.appendChild(ballImg);
 
 // Create and add the timeline date label
