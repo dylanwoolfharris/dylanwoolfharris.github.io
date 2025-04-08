@@ -1166,7 +1166,7 @@ function switchToCategoryMode() {
   document.getElementById('main-right').innerHTML = '';
   document.getElementById('main-right').className = ''; // reset to default (no background, no padding)
   document.getElementById('main-right').style.overflowY = 'auto';
-  document.getElementById('main-right').style.backgroundColor = 'black';
+  //document.getElementById('main-right').style.backgroundColor = 'black';
 
 
   // 🧹 Clear timeline mode marker from the map
@@ -1213,7 +1213,7 @@ function switchToTimelineMode() {
   document.getElementById('main-right').innerHTML = '';
   document.getElementById('main-right').classList.remove('video-mode');
   document.getElementById('main-right').style.overflowY = 'hidden';
-
+  document.getElementById('main-right').style.backgroundColor = 'black';
 
   fetch('./guattimeline.json')
     .then(response => response.json())
