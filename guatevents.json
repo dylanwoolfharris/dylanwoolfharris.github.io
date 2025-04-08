@@ -153,11 +153,6 @@
 			{
 				"type": "image",
 				"src": "images/guat.PNG"
-			},
-			{
-				"type": "popup-image",
-				"label": "City Index",
-				"src": "images/cityindex.png"
 			}	
 		]
 	},
