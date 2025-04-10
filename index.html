@@ -749,8 +749,15 @@
         pinLink.addEventListener('click', function(e) {
         e.preventDefault();
         const mainRight = document.getElementById('main-right');
-        mainRight.style.backgroundColor = '#fefefe';
-        mainRight.style.color = '#222';
+        const currentCategory = document.getElementById('category-dropdown').value;
+
+        if (currentCategory === 'MINI DOCS') {
+          mainRight.style.backgroundColor = 'black';
+          mainRight.style.color = 'white';
+        } else {
+          mainRight.style.backgroundColor = '#fefefe';
+          mainRight.style.color = '#222';
+        }
           
   // This will always be the <a> element
   const clickedPin = e.currentTarget;
