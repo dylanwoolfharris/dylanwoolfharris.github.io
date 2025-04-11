@@ -683,6 +683,49 @@
 				]
 			} 
 		]
-	}	
+	},
+	{
+		"id": "event021",
+		"date": "11-08-2024",
+		"category": "HIGHLIGHTS",
+		"event_name": "Ceramic Workplace",
+		"location": [14.693946817164464, -91.11717502542777],
+		"content_blocks": [
+			{
+				"type": "image2",
+				"srcs": ["images/mug1.JPG", "images/mug2.JPG"]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day I intrude. I’ve stepped into a little concrete building that’s on a steep hillside overlooking Lake Atitlán. It’s a workspace in the town of San Antonio where several people are making ceramic cups and bowls. The windows, facing out to the water, have no glass panes. A refreshing lake breeze wafts through."
+				]
+					
+			},
+			{
+				"type": "text",
+				"text": [
+					"My friend, a local, had told me I could poke around and witness the process. Now that I’m inside, I quickly get the sense that my own unannounced, self-guided, unexplained tour is not common. The employees seem confused yet amused that I am wandering among them with a dumb smile on my face like a lost tourist. I don’t know Spanish so I’m unable to explain who I am or why I’m there. A young woman handling clay laughs quietly and looks at her friend."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"It’s clear to them that I’m not from around here. And for this reason, I don’t feel any of the discomfort I probably deserve. I nod and continue to smile and eye the shelves with rows of ceramics in various stages of completion."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"A few days later, I will purchase three mugs at a market, for gifts when I return home. In time, I will regret not buying four and keeping one for myself."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/mug3.JPG"
+			}
+		]
+	}
+	
 ]
 
