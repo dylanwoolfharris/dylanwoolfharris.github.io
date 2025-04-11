@@ -1277,6 +1277,8 @@ function switchToTimelineMode() {
 
       console.log("Ready to create bowling ball marker");
 
+      // Testing delay here
+setTimeout (() => {      
       // Add bowling ball marker
       // Create marker wrapper (container)
 let marker = document.createElement('div');
@@ -1341,8 +1343,8 @@ marker.addEventListener('mousedown', (e) => {
   document.body.style.cursor = 'grabbing';
   dragZone.style.pointerEvents = 'auto';
 });
-
-
+// end testing here
+}, 200);
 
 document.addEventListener('mouseup', (e) => {
   console.log("🔴 MOUSEUP fired at", e.clientX);
