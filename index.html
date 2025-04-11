@@ -1281,6 +1281,11 @@ function switchToTimelineMode() {
 setTimeout (() => {      
       // Add bowling ball marker
       // Create marker wrapper (container)
+  const existingMarker = document.getElementById('timeline-marker');
+  if (existingMarker) {
+    existingMarker.remove();
+  }
+  
 let marker = document.createElement('div');
 marker.id = 'timeline-marker';
 marker.style.position = 'absolute';
