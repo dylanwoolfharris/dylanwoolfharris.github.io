@@ -725,6 +725,45 @@
 				"src": "images/mug3.JPG"
 			}
 		]
+	},
+	{
+		"id": "event022",
+		"date": "11-06-2024",
+		"category": "THINGS I LEARNED",
+		"event_name": "Earthquake",
+		"location": [14.556645902426032, -90.73247803444492],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1198.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today is the day my path is blocked by centuries-old earthquake rubble. I’m between the columns of what once was a grand cathedral, and the heart of Antigua. These days, there is no roof overhead but the arches that once held the ceiling up are still intact. The cathedral was damaged in a 1773 earthquake that was so devastating to the town that the Spanish decided rather than try to rebuild the capital, they would start anew somewhere else in Guatemala."
+				]
+			},
+			{
+				"type": "footnote",
+				"note": "As is often the case with ancient ruins, I assume that a lot of this building, including the arches, has been restored, but I honestly don’t know."
+			},
+			{
+				"type": "text",
+				"text": [
+					"Ruins of the former church lie behind the present day cathedral facing the central plaza. Inside, large slabs of stone and mortar, knocked down in the tremors, sprawl on the floor. In the intervening years, moss has taken residence here."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"The area is large and well kept. I slip down a dark stairway, into a dank basement that was once a crematorium, where bodies of those who died by contagious plagues were burned."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1204.JPG"
+			}
+		]
 	}
 	
 ]
