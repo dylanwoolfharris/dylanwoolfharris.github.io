@@ -1228,9 +1228,8 @@ function switchToCategoryMode() {
 }
 
 function switchToTimelineMode() {
-  //console.log('Switching to TIMELINE mode');
   document.getElementById('category-dropdown').style.display = 'none';
-  document.getElementById('timeline-line').innerHTML = ''; // clear timeline
+  document.getElementById('timeline-line').innerHTML = '';
   document.getElementById('timeline-line').classList.add('timeline-mode');
   document.getElementById('main-right').innerHTML = '';
   document.getElementById('main-right').classList.remove('video-mode');
@@ -1240,161 +1239,127 @@ function switchToTimelineMode() {
   fetch('./guattimeline.json')
     .then(response => response.json())
     .then(timelineData => {
-      console.log('Timeline Data:', timelineData);
       function parseDateMMDDYYYY(dateStr) {
         const [month, day, year] = dateStr.split('-').map(Number);
-        return new Date(year, month - 1, day); // JS months are 0-based
+        return new Date(year, month - 1, day);
       }
 
       const timelineDates = timelineData.map(item => parseDateMMDDYYYY(item.date)).sort((a, b) => a - b);
-      const firstDate = new Date(timelineDates[0].getFullYear(), timelineDates[0].getMonth(), timelineDates[0].getDate());
-      const lastDate = new Date(timelineDates[timelineDates.length - 1].getFullYear(), timelineDates[timelineDates.length - 1].getMonth(), timelineDates[timelineDates.length - 1].getDate());
-
-      
-
+      const firstDate = timelineDates[0];
+      const lastDate = timelineDates[timelineDates.length - 1];
 
       const allDates = [];
-      let currentDate = new Date(firstDate.getFullYear(), firstDate.getMonth(), firstDate.getDate()); // midnight local
-
-      const last = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
-
-      while (currentDate <= last) {
+      let currentDate = new Date(firstDate);
+      while (currentDate <= lastDate) {
         allDates.push(new Date(currentDate));
         currentDate.setDate(currentDate.getDate() + 1);
       }
 
-
-
-
-      // Render the timeline
       renderTimeline(allDates, timelineData);
 
-      // Setup globals and initial image
       timelineDataGlobal = timelineData;
       allTimelineDates = allDates;
       currentTimelineIndex = 0;
       updateTimelineMarkerAndImage();
 
-      console.log("Ready to create bowling ball marker");
+      let marker;
 
-      // Testing delay here
-setTimeout (() => {      
-      // Add bowling ball marker
-      // Create marker wrapper (container)
-  const existingMarker = document.getElementById('timeline-marker');
-  if (existingMarker) {
-    existingMarker.remove();
-  }
-  
-let marker = document.createElement('div');
-marker.id = 'timeline-marker';
-marker.style.position = 'absolute';
-marker.style.top = '0px';
-marker.style.width = '20px';
-marker.style.height = '20px';
-marker.style.zIndex = '1000';
-marker.style.cursor = 'grab';
-marker.style.transform = 'translateX(-50%)';
-marker.style.display = 'flex';
-marker.style.justifyContent = 'center';
+      setTimeout(() => {
+        // Remove any existing marker
+        const existing = document.getElementById('timeline-marker');
+        if (existing) existing.remove();
 
-// Calculate initial position
-const totalDays = (lastDate - firstDate) / (1000 * 60 * 60 * 24);
-const daysFromStart = (allTimelineDates[0] - firstDate) / (1000 * 60 * 60 * 24);
-const positionPercent = (daysFromStart / totalDays) * 100;
-marker.style.left = `${positionPercent}%`;
+        // Create marker
+        marker = document.createElement('div');
+        marker.id = 'timeline-marker';
+        marker.style.position = 'absolute';
+        marker.style.top = '0px';
+        marker.style.width = '20px';
+        marker.style.height = '20px';
+        marker.style.zIndex = '1000';
+        marker.style.cursor = 'grab';
+        marker.style.transform = 'translateX(-50%)';
+        marker.style.display = 'flex';
+        marker.style.justifyContent = 'center';
 
-// Create and add the bowling ball image inside the marker container
-const ballImg = document.createElement('img');
-ballImg.src = 'images/bowling-ball.png';
-ballImg.style.width = '20px';
-ballImg.style.height = '20px';
-ballImg.onload = () => {
-  console.log('Bowling ball icon loaded successfully');
-};
-ballImg.onerror = () => {
-  console.warn('Bowling ball icon failed to load. Retrying...');
-  setTimeout(() => {
-    ballImg.src = 'images/bowling-ball.png'; // Retry loading
-  }, 200);
-};
-marker.appendChild(ballImg);
+        const totalDays = (lastDate - firstDate) / (1000 * 60 * 60 * 24);
+        const daysFromStart = (allTimelineDates[0] - firstDate) / (1000 * 60 * 60 * 24);
+        const positionPercent = (daysFromStart / totalDays) * 100;
+        marker.style.left = `${positionPercent}%`;
 
-// Create and add the timeline date label
-const timelineDateLabel = document.createElement('div');
-timelineDateLabel.id = 'timeline-date-label';
-timelineDateLabel.classList.add('timeline-date-label');
-marker.appendChild(timelineDateLabel);
+        const ballImg = document.createElement('img');
+        ballImg.src = 'images/bowling-ball.png';
+        ballImg.alt = 'Marker';
+        ballImg.style.width = '20px';
+        ballImg.style.height = '20px';
+        ballImg.onload = () => console.log('✅ Bowling ball icon loaded successfully');
+        ballImg.onerror = () => {
+          console.warn('⚠️ Retry loading bowling ball icon...');
+          setTimeout(() => (ballImg.src = 'images/bowling-ball.png'), 200);
+        };
+        marker.appendChild(ballImg);
 
-// Append the full marker to the timeline line
-document.getElementById('timeline-line').appendChild(marker);
+        const dateLabel = document.createElement('div');
+        dateLabel.id = 'timeline-date-label';
+        dateLabel.classList.add('timeline-date-label');
+        marker.appendChild(dateLabel);
 
-// Update everything now that marker + label are ready
-updateTimelineMarkerAndImage();
+        document.getElementById('timeline-line').appendChild(marker);
+        updateTimelineMarkerAndImage();
+      }, 200);
 
+      let isDragging = false;
+      const dragZone = document.getElementById('drag-zone');
+      const timelineLine = document.getElementById('timeline-line');
 
+      document.addEventListener('mousedown', (e) => {
+        if (e.target.id !== 'timeline-marker' && e.target.parentNode?.id !== 'timeline-marker') return;
+        isDragging = true;
+        document.body.classList.add('grabbing');
+        document.body.style.cursor = 'grabbing';
+        dragZone.style.pointerEvents = 'auto';
+      });
 
-     
+      document.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        document.body.classList.remove('grabbing');
+        document.body.style.cursor = 'default';
+        dragZone.style.pointerEvents = 'none';
 
+        const rect = timelineLine.getBoundingClientRect();
+        const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+        const percent = x / rect.width;
 
+        const totalDays = (allTimelineDates[allTimelineDates.length - 1] - allTimelineDates[0]) / (1000 * 60 * 60 * 24);
+        const daysFromStart = Math.round(percent * totalDays);
 
-let isDragging = false;
-const dragZone = document.getElementById('drag-zone');
-const timelineLine = document.getElementById('timeline-line');
+        const snappedDate = new Date(allTimelineDates[0]);
+        snappedDate.setDate(snappedDate.getDate() + daysFromStart);
 
-marker.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  document.body.classList.add('grabbing');
-  document.body.style.cursor = 'grabbing';
-  dragZone.style.pointerEvents = 'auto';
-});
-// end testing here
-}, 200);
-
-document.addEventListener('mouseup', (e) => {
-  console.log("🔴 MOUSEUP fired at", e.clientX);
-
-  if (!isDragging) return;
-  isDragging = false;
-  document.body.classList.remove('grabbing');
-  document.body.style.cursor = 'default';
-
-  dragZone.style.pointerEvents = 'none';
-
-  const rect = timelineLine.getBoundingClientRect();
-  const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
-  const percent = x / rect.width;
-
-  const totalDays = (allTimelineDates[allTimelineDates.length - 1] - allTimelineDates[0]) / (1000 * 60 * 60 * 24);
-  const daysFromStart = Math.round(percent * totalDays);
-
-  const snappedDate = new Date(allTimelineDates[0]);
-  snappedDate.setDate(snappedDate.getDate() + daysFromStart);
-
-  const snappedIndex = timelineDataGlobal.findIndex(entry => {
-    const entryDate = new Date(entry.date);
-    return entryDate.toDateString() === snappedDate.toDateString();
-  });
-
-  if (snappedIndex !== -1) {
-    currentTimelineIndex = snappedIndex;
-    updateTimelineMarkerAndImage(currentTimelineIndex);
-  }
-});
-
-document.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-
-  const rect = timelineLine.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const percent = Math.max(0, Math.min(x / rect.width, 1)) * 100;
-
-  marker.style.left = `${percent}%`;
-});
-
-          //console.log("Rendering timeline with", allDates.length, "dates");
+        const snappedIndex = timelineDataGlobal.findIndex(entry => {
+          const entryDate = new Date(entry.date);
+          return entryDate.toDateString() === snappedDate.toDateString();
         });
-    }
+
+        if (snappedIndex !== -1) {
+          currentTimelineIndex = snappedIndex;
+          updateTimelineMarkerAndImage(currentTimelineIndex);
+        }
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging || !marker) return;
+
+        const rect = timelineLine.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percent = Math.max(0, Math.min(x / rect.width, 1)) * 100;
+
+        marker.style.left = `${percent}%`;
+      });
+    });
+}
+
 
 function updateTimelineMarkerAndImage() {
   marker = document.getElementById('timeline-marker');
