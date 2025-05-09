@@ -768,7 +768,37 @@
 				"src": "images/IMG_1204.JPG"
 			}
 		]
+	},
+	{
+		"id": "event023",
+		"date": "11-07-2024",
+		"category": "FOOD & DRINKS",
+		"event_name": "SMores",
+		"location": [14.373140522080044, -90.621269690959],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/IMG_1170marsh.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today I eat something I normally don’t. I’m in a field of brittle lava rock below Pacaya’s volcanic peak. I hiked here with a group based out of Antigua, and part of the excursion includes a stop near a crevice where heat seeps up through the earth’s crust. The air is hot enough to toast a marshmallow. To demonstrate, the guide has packed ingredients for s'mores. I don’t particularly like marshmallows and toasting them here feels gimmicky, but I want to be a good sport and eat what is offered."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"So I balance a skewered marshmallow over a crack in the ground and wait."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"After a few minutes, it’s ready and I eat the s’more. I devour it. The sugar hits some pleasure center in my brain that I wasn’t expecting. Or maybe I’m just hungry from the hike. When a woman from New York asks if she can have another, I ask to toast another one too."
+				]
+			}
+		]
 	}
-	
 ]
 
