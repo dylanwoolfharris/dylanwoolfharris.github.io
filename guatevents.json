@@ -799,6 +799,67 @@
 				]
 			}
 		]
+	},
+	{
+		"id": "event024",
+		"date": "11-06-2024",
+		"category": "CITIES & TOWNS",
+		"event_name": "Antigua",
+		"location": [14.558936563529661, -90.73270440102473],
+		"content_blocks": [
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1011.JPG", "images/IMG_1017.JPG"]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today I see Antigua. I’m on a second-story balcony as evening approaches, looking down on a central plaza courtyard where residents hang out near a water fountain to socialize and sell crafts and street food to tourists. Children run and scream and play. The building I’m in used to be government offices, but is now a museum that houses modern pieces but also artifacts and artwork dating to this city’s founding when it was called Santiago de los Caballeros de Guatemala and designated by the Spanish as Guatemala’s new capital. To the east of the plaza is a Catholic church. People wander in and out of its open doors. The sky is turning indigo tonight."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Tectonically speaking, Antigua couldn’t have been built on a more precarious plot of land. Since its founding, residents of this town have been assaulted with natural disasters, including prolonged volcanic eruptions, cataclysmic mudslides, and earthquake after destructive earthquake, including one in 1773 that had the Spanish throw up their hands in defeat and order to move the seat of government to Guatemala City. From that time on, this city was known as Antigua Guatemala, or just Antigua for short."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"For decades after, Antigua was more or less a ghost town, which helped preserve the stone roads and walls well enough that UNESCO designated the city a World Heritage site more than 200 years after its abandonment in 1979."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today, it’s impossible to navigate this city’s streets and not think of the past. Even the name Antigua is a constant reminder, which translates to Ancient or Old. An iconic arch spans across a road a few blocks from where I stand. Nuns used it to get from a convent to a school without having to walk in the street."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Antigua’s most prominent landmark, though, is not actually in the city. Agua Volcano, an imposing southern compass that helps one stay oriented when exploring the city’s grid, is less than 10 miles away. Due to a spate of muggings, tourists are discouraged from hiking up to Agua’s summit, but there are a couple of other safer volcanoes nearby. Camping on Acatenango Volcano is a popular excursion, where one can also see Fuego Volcano, which regularly pumps a column of ash into the air."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I step away from the balcony and continue through the museum. Loud creaky floorboards break the silence around me. I end up in an open courtyard in the back on the ground floor, where I hear a group of people laughing from a rooftop in the distance."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1029.JPG"
+			},
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1102.JPG", "images/IMG_1026.JPG"]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1219.JPG"
+			}
+		]
 	}
 ]
 
