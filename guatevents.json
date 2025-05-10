@@ -891,6 +891,37 @@
 				]
 			}
 		]
+	},
+	{
+		"id": "event025",
+		"date": "11-10-2024",
+		"category": "CITIES & TOWNS",
+		"event_name": "Chichi",
+		"location": [14.943358491900245, -91.11216187578816],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "image/nesp.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today I sample an unfamiliar fruit. I’m on undeveloped property above Panajachel that my friend Valentina has recently purchased with plans to one day build a home and live. The area is overgrown and pretty. A tree in a little clearing bears nispero, a fruit I have never tried or heard of. I pluck one from the branches, wipe off the dust and sink my teeth in. It reminds me of a small apricot. I discard the hard pit in tall grass and eat another."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Valentina is eager to gather as many nisperos as she can. They are ripe and in only a few days time, she says, many will fall to the ground and rot."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I help her harvest as much fruit as we can carry."
+				]
+			}
+		]
 	}
 ]
 
