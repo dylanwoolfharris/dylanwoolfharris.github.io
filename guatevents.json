@@ -893,11 +893,11 @@
 		]
 	},
 	{
-		"id": "event025",
+		"id": "event026",
 		"date": "11-10-2024",
-		"category": "CITIES & TOWNS",
-		"event_name": "Chichi",
-		"location": [14.943358491900245, -91.11216187578816],
+		"category": "PLANTS & ANIMALS",
+		"event_name": "Nispero",
+		"location": [14.746713847826433, -91.13964492964222],
 		"content_blocks": [
 			{
 				"type": "image",
