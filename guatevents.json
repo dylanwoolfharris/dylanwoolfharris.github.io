@@ -808,8 +808,8 @@
 		"location": [14.558936563529661, -90.73270440102473],
 		"content_blocks": [
 			{
-				"type": "image2",
-				"srcs": ["images/IMG_1011.JPG", "images/IMG_1017.JPG"]
+				"type": "image",
+				"src": "images/ant.JPG"
 			},
 			{
 				"type": "text",
