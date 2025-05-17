@@ -932,7 +932,7 @@
 		"content_blocks": [
 			{
 				"type": "image2",
-				"srcs": ["images/IMG_1373.JPG". "images/IMG_1347.JPG"]
+				"srcs": ["images/IMG_1373.JPG", "images/IMG_1347.JPG"]
 			},
 			{
 				"type": "text",
