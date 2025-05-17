@@ -922,6 +922,63 @@
 				]
 			}
 		]
+	},
+	{
+		"id": "event027",
+		"date": "11-9-2024",
+		"category": "CITIES & TOWNS",
+		"event_name": "San Juan",
+		"location": [14.696440, -91.284800],
+		"content_blocks": [
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1373.JPG". "images/IMG_1347.JPG"]
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today I boat to San Juan. I’m alone among strangers. Water taxis leave about every 30 minutes and are usually packed full. The system in Lake Atitlán is essential for residents, who might live in one town but go to school or get services in another. For travelers, boats are reliable and cheap–most rides cost between $2 and $3–and are a convenient way to visit dispersed spots around the lake."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"As we approach San Juan, the motor cuts low and we glide to the dock."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"On land, I walk past cafes and stores. The main streets around San Juan’s peer have been painted with bright designs and festooned with flags and umbrellas and lights. A few blocks up the hill, a band plays in an event space. A church sits another couple of blocks north."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"I wander into a narrow alley walkway, past a little fenced-in playground, until I reach an open air co-op textile space where four or five people are hanging out. It’s late afternoon, and I get the impression that they’re done working for the day."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"For generations, San Juan men and women (but mostly women) have passed down a traditional method of textile dyeing and weaving. Visitors will find artisan shops selling cloth coin bags and belts, shawls and socks. They can also watch the dyeing and weaving process. I step into enclosed rooms where their wares are on display. No one pays much attention to me, and I feel free to look around without any pressure."
+				]
+			},
+			{
+				"type": "text",
+				"text": [
+					"This afternoon, I have no agenda."
+				]
+			},
+			{
+				"type": "image",
+				"src": "images/IMG_1334.JPG"
+			},
+			{
+				"type": "image2",
+				"srcs": ["images/IMG_1346.JPG", "images/IMG_1339.JPG"]
+			}
+		]
 	}
 ]
 
