@@ -30,7 +30,7 @@
 			},
 			{
 				"type": "image",
-				"src": "images/IMG_1373.JPG"
+				"src": "images/IMG_1329.JPG"
 			}	
 			
 		]
@@ -931,8 +931,8 @@
 		"location": [14.696440, -91.284800],
 		"content_blocks": [
 			{
-				"type": "image2",
-				"srcs": ["images/IMG_1373.JPG", "images/IMG_1347.JPG"]
+				"type": "image",
+				"src": "images/sj.JPG"
 			},
 			{
 				"type": "text",
