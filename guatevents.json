@@ -979,6 +979,25 @@
 				"srcs": ["images/IMG_1346.JPG", "images/IMG_1339.JPG"]
 			}
 		]
+	},
+	{
+		"id": "event028",
+		"date": "11-08-2024",
+		"category": "THE ODD THINGS",
+		"event_name": "halloween",
+		"location": [14.744780, -91.151859],
+		"content_blocks": [
+			{
+				"type": "image",
+				"src": "images/halloween.JPG"
+			},
+			{
+				"type": "text",
+				"text": [
+					"Today I happen upon old Halloween decorations."
+				]
+			}
+		]
 	}
 ]
 
