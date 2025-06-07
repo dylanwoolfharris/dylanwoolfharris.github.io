@@ -624,7 +624,7 @@
 		"content_blocks": [
 			{
 				"type": "image2",
-				"srcs": ["images/IMG_1076.JPG", "images/IMG_1070.JPG"]
+				"srcs": ["images/IMG_1076.JPG", "images/IMG_1082.JPG"]
 			},
 			{
 				"type": "text",
@@ -643,7 +643,7 @@
 			},
 			{
 				"type": "image2",
-				"srcs": ["images/IMG_1086.JPG", "images/IMG_1082.JPG"]
+				"srcs": ["images/IMG_1086.JPG", "images/IMG_1070.JPG"]
 			},
 			{
 				"type": "image",
